@@ -37,4 +37,9 @@ public class TestGreeter {
 
     assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
   }
+  public void greetShouldIncludeGreetingMessageBala() {
+    String someone = "World, My first commit in Jenkins";
+
+    assertThat(greeter.greet(someone).length(), is(greaterThan(someone.length())));
+  }
 }
