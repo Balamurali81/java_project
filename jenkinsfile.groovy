@@ -9,7 +9,7 @@ job('First-seed-project-Maven') {
         scm('* * * * *')
     }
     steps {
-        maven('clean build', 'single-module/pom.xml')
+        maven('clean package', 'single-module/pom.xml')
     }
     publishers {
         archiveArtifacts '**/*.jar'
