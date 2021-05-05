@@ -6,7 +6,7 @@ job('First-seed-project-Maven') {
         git('https://github.com/Balamurali81/java_project.git', 'main')
     }
     triggers {
-        git('* * * * *')
+        scm('* * * * *')
     }
     steps {
         maven('clean build', 'java-tomcat-sample/pom.xml')
