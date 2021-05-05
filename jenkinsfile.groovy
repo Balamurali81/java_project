@@ -1,4 +1,4 @@
-freeStyleJob('First-seed-project-Maven') {
+job('First-seed-project-Maven') {
     // logRotator(-1, 10)
     // jdk('Java 8')
     scm {
