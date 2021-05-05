@@ -4,6 +4,8 @@ job('First-seed-project-Maven') {
     // jdk('Java 8')
     scm {
         git('https://github.com/Balamurali81/java_project.git', 'simple')
+        node / gitConfigName('Balamurali81')
+        node / gitConfigEmail('n.balamuralikrishna@gmail.com')
     }
     triggers {
         scm('* * * * *')
