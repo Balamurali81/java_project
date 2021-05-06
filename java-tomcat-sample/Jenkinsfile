@@ -16,13 +16,11 @@ pipeline {
             steps {
                 build job: 'Code-Deploy-Staging'
             }
-            
-
-        }
-        stage ('Copy artifcats to Production') {
-            steps {
-                build job: 'Code-Deploy-Prod'
-            }
-        }
+       }
+        // stage ('Copy artifcats to Production') {
+        //     steps {
+        //         build job: 'Code-Deploy-Prod'
+        //     }
+        // }
     }
 }
