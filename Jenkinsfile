@@ -1,26 +1,31 @@
 pipeline {
     agent any
     stages {
-        stage ('init') {
+        stage ('Init') {
             steps{
                 echo "This step defines the initialisation of code in Pipeline"
             }
         }
-        stage ('build') {
+        stage ('Build') {
             steps{
                 echo "This step defines the code is being build by Maven in Pipeline"
             }
         }
 
-        stage ('test') {
+        stage ('Test') {
             steps{
                 echo " This step defines the Unit and Integration testing of code in Pipeline"
             }
         }
 
-        stage ('deploy') {
+        stage ('Deploy to staging') {
             steps{
                 echo "This stage is to deploy the artificat post QA"
+            }
+        }
+        stage ('Deploy to production') {
+            steps{
+                echo "This stage is to deploy the artificat to production"
             }
         }
     }
