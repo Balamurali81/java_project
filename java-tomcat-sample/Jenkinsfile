@@ -23,7 +23,7 @@ pipeline {
         stage ('Copy artifcats to Production') {
             steps {
                 timeout(time: 5, unit: 'DAYS') {
-                input message 'Approve/Reject for prod deployment?'
+                input message:'Approve/Reject for prod deployment?'
                 }
                 build job: 'Code-Deploy-Prod'
             }
