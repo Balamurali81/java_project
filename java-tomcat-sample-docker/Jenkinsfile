@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage ('Build Maven artifcat') {
+            steps {
+                sh 'mvn -f java-tomcat-sample/pom.xml clean package'
+            }
+            post {
+                success{
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+
+            }
+        }
+        stage ('Create docker image for web appliation with Tomcat') {
+            steps{
+                sh 'docker build . -t firstsampledockerapp'
+            }
+            
+        }
+    }
+}
