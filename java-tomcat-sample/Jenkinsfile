@@ -14,17 +14,17 @@ pipeline {
         }
         stage ('Copy artifcats to Staging') {
             steps {
-                timeout(time: 5, unit: 'DAYS') { 
-                input('Approve/Reject for stage deployment?')
-                }
+                // timeout(time: 5, unit: 'DAYS') { 
+                // input('Approve/Reject for stage deployment?')
+                // }
                 build job: 'Code-Deploy-Staging'
             }
        }
         stage ('Copy artifcats to Production') {
             steps {
-                timeout(time: 5, unit: 'DAYS') {
-                input message:'Approve/Reject for prod deployment?'
-                }
+                // timeout(time: 5, unit: 'DAYS') {
+                // input message:'Approve/Reject for prod deployment?'
+                // }
                 build job: 'Code-Deploy-Prod'
             }
         }
