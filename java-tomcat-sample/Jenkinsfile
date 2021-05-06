@@ -12,5 +12,17 @@ pipeline {
 
             }
         }
+        stage ('Copy artifcats to Staging') {
+            steps {
+                build job: 'Code-Deploy-Staging'
+            }
+            
+
+        }
+        stage ('Copy artifcats to Production') {
+            steps {
+                build job: 'Code-Deploy-Prod'
+            }
+        }
     }
 }
